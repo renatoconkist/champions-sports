@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Theme/theme.uss?fileID=7433441132597879392&amp;guid=e882c81082ad640d895c30fc242e9a86&amp;type=3#theme"/>
+    <ui:VisualElement name="loading-root" style="flex-grow: 1; background-color: rgb(236, 243, 254); justify-content: center; align-items: center;">
+        <ui:VisualElement name="logo-image" class="login-logo" style="width: 200px; height: 200px; margin-bottom: 24px;"/>
+        <ui:VisualElement name="spinner" style="width: 160px; height: 160px; border-radius: 999px; border-color: rgb(100, 226, 133); border-width: 4px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-image: url(&quot;project://database/Assets/Art/UISprites/Icons.png?fileID=1355237857&amp;guid=b046702c83e084ad8ac1dd7618216f0f&amp;type=3#Icons_9&quot;); -unity-background-image-tint-color: rgb(134, 154, 183);"/>
+        <ui:Label name="loading-label" text="Carregando…" class="cs-label-secondary" style="-unity-text-align: middle-center; margin-top: 16px; font-size: 24px;">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:8837daf99efd1458eba2a86583af9536" entry="Id(263184387)"/>
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+</ui:UXML>

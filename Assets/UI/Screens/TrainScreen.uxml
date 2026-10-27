@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="../Theme/theme.uss" />
+    <!--
+        Treino (Training tab)
+        Placeholder: will show ContentCards from the content service.
+        Controller: TreinoController.cs
+        Locale keys: TRAINING_*
+    -->
+    <ui:VisualElement name="treino-root" class="cs-screen-root"
+                      style="padding-top: 16px; flex-grow: 1;">
+
+        <!-- Header -->
+        <ui:VisualElement name="topbar"
+                          style="flex-direction: row; align-items: center; margin-bottom: 20px;">
+            <ui:Label text="🏃 Treino"
+                      class="cs-section-title"
+                      style="flex-grow: 1;" />
+            <ui:Button name="filter-button" text="Filtrar"
+                       class="cs-scope-btn"
+                       style="height: 32px; padding-left: 12px; padding-right: 12px;" />
+        </ui:VisualElement>
+
+        <!-- Category chips -->
+        <ui:VisualElement name="categories-row"
+                          style="flex-direction: row; margin-bottom: 20px;">
+            <ui:Button name="cat-all" text="Todos"
+                       class="cs-scope-btn cs-scope-btn--active"
+                       style="margin-right: 8px;" />
+            <ui:Button name="cat-tecnica" text="Técnica"
+                       class="cs-scope-btn"
+                       style="margin-right: 8px;" />
+            <ui:Button name="cat-tatica" text="Tática"
+                       class="cs-scope-btn"
+                       style="margin-right: 8px;" />
+            <ui:Button name="cat-fisico" text="Físico"
+                       class="cs-scope-btn" />
+        </ui:VisualElement>
+
+        <!-- Content list (populated at runtime) -->
+        <ui:ScrollView name="content-scroll" style="flex-grow: 1;">
+            <!-- ContentCard items injected here at runtime by TreinoController -->
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>

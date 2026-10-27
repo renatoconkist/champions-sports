@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="../Theme/theme.uss" />
+    <!--
+        Ranking tab
+        Shows global and friends leaderboards.
+        Controller: RankingController.cs
+        Locale keys: RANKING_*
+    -->
+    <ui:VisualElement name="ranking-root" class="cs-screen-root"
+                      style="padding-top: 16px; flex-grow: 1;">
+
+        <!-- Header -->
+        <ui:Label text="🏆 Ranking"
+                  class="cs-section-title"
+                  style="margin-bottom: 20px;" />
+
+        <!-- Scope toggle (Global / Amigos) -->
+        <ui:VisualElement name="scope-row" class="cs-scope-row"
+                          style="margin-bottom: 20px;">
+            <ui:Button name="scope-global" text="Global"
+                       class="cs-scope-btn cs-scope-btn--active"
+                       style="flex-grow: 1;" />
+            <ui:Button name="scope-friends" text="Amigos"
+                       class="cs-scope-btn"
+                       style="flex-grow: 1;" />
+        </ui:VisualElement>
+
+        <!-- My position card -->
+        <ui:VisualElement name="my-rank-card" class="cs-card"
+                          style="flex-direction: row; align-items: center;
+                                 margin-bottom: 16px;
+                                 border-color: rgb(100, 226, 133);
+                                 border-width: 2px;">
+            <ui:Label name="my-rank-pos" text="#—"
+                      style="font-size: 22px;
+                             color: rgb(100, 226, 133);
+                             -unity-font-definition: url('../../Fonts/Inter/Inter-Bold.ttf');
+                             min-width: 48px;
+                             -unity-text-align: middle-center;" />
+            <ui:VisualElement name="my-avatar" class="cs-avatar"
+                              style="width: 40px; height: 40px; margin-right: 12px;
+                                     border-color: rgb(100, 226, 133); border-width: 2px;">
+                <ui:Label text="👤"
+                          style="font-size: 18px; -unity-text-align: middle-center;" />
+            </ui:VisualElement>
+            <ui:Label name="my-name" text="Você"
+                      style="font-size: 16px;
+                             color: rgb(13, 27, 42);
+                             -unity-font-definition: url('../../Fonts/Inter/Inter-Bold.ttf');
+                             flex-grow: 1;" />
+            <ui:Label name="my-score" text="— XP"
+                      class="cs-label-secondary" />
+        </ui:VisualElement>
+
+        <!-- Ranking list (populated at runtime) -->
+        <ui:ScrollView name="ranking-scroll" style="flex-grow: 1;">
+            <!-- RankingEntry items injected at runtime -->
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../Theme/theme.uss" />
+    <!--
+        Popup Overlay  (componente global)
+        UIDocument sort-order: acima de todas as telas (ex: 10)
+        Controller : PopupController.cs
+        Uso        : PopupController.Instance.Show("AVISO!", "Mensagem...");
+                     PopupController.Instance.Show("AVISO!", "Mensagem...", onConfirm: () => { ... });
+
+        Oculto por padrão — PopupController define display:flex ao abrir.
+    -->
+
+    <!-- Overlay semitransparente + centralização -->
+    <ui:VisualElement name="popup-root" class="cs-popup-root">
+
+        <!-- Card branco -->
+        <ui:VisualElement name="popup-card" class="cs-popup-card">
+
+            <!-- Faixa verde no topo -->
+            <ui:VisualElement class="cs-popup-accent" />
+
+            <!-- Título -->
+            <ui:Label name="popup-title" text="AVISO!"
+                      class="cs-popup-title" />
+
+            <!-- Corpo -->
+            <ui:Label name="popup-body"
+                      text="Mensagem importante para ser enviada ao cliente"
+                      class="cs-popup-body" />
+
+            <!-- Ações -->
+            <ui:VisualElement class="cs-popup-actions">
+                <ui:Button name="popup-confirm" text="OK"
+                           class="cs-button-primary login-btn" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

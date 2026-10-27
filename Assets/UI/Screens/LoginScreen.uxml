@@ -1,0 +1,57 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Theme/theme.uss?fileID=7433441132597879392&amp;guid=e882c81082ad640d895c30fc242e9a86&amp;type=3#theme"/>
+    <ui:VisualElement name="login-root" class="cs-screen-root login-root" style="flex-direction: column; padding: 0; background-color: rgb(28, 59, 37);">
+        <ui:VisualElement name="bg-image" class="login-bg"/>
+        <ui:VisualElement name="bg-overlay" class="login-bg-overlay"/>
+        <ui:VisualElement name="top-bar" class="login-top-bar">
+            <ui:VisualElement name="language-container" style="position: relative; overflow: visible;">
+                <ui:Button name="language-btn" tooltip="Selecionar idioma" class="cs-button-language cs-button-language--pt"/>
+                <ui:VisualElement name="language-picker" enabled="true" class="language-picker" style="display: none; flex-direction: row; top: -5px; right: 68px;">
+                    <ui:Button name="flag-pt" class="language-picker__flag cs-button-language--pt"/>
+                    <ui:Button name="flag-en" class="language-picker__flag cs-button-language--en"/>
+                    <ui:Button name="flag-es" class="language-picker__flag cs-button-language--es"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="login-spacer" style="visibility: hidden;"/>
+        <ui:VisualElement name="login-panel" class="cs-panel-login">
+            <ui:VisualElement name="logo-image" class="login-logo"/>
+            <ui:VisualElement name="form" class="login-form">
+                <ui:TextField name="email-field" label="" value="" placeholder="E-mail" binding-path="Email" keyboard-type="EmailAddress" placeholder-text="Email" select-word-by-double-click="false" class="cs-input-login" style="margin-bottom: 10px;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="placeholderText" table="GUID:8837daf99efd1458eba2a86583af9536" entry="Id(13564696846336)"/>
+                    </Bindings>
+                </ui:TextField>
+                <ui:TextField name="password-field" label="" value="" placeholder="Senha" binding-path="Password" is-password-field="true" placeholder-text="Password" password="true" select-word-by-double-click="false" class="cs-input-login" style="margin-bottom: 16px;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="placeholderText" table="GUID:8837daf99efd1458eba2a86583af9536" entry="Id(13801465307136)"/>
+                    </Bindings>
+                </ui:TextField>
+                <ui:Label name="error-label" binding-path="ErrorMessage" class="cs-label-error" style="min-height: 18px; margin-bottom: 8px;"/>
+                <ui:Button name="login-button" text="LOGIN" class="cs-button-primary login-btn" style="margin-bottom: 10px;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:2ceec474979474c7b853c0924ca72fab" entry="Id(1513086976)"/>
+                    </Bindings>
+                </ui:Button>
+                <ui:Button name="register-button" text="CRIAR CONTA" class="cs-button-primary login-btn" style="margin-bottom: 4px; -unity-text-generator: advanced;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:2ceec474979474c7b853c0924ca72fab" entry="Id(1525669889)"/>
+                    </Bindings>
+                </ui:Button>
+                <ui:Button name="forgot-button" text="Esqueci a Senha" class="cs-link-text" style="margin-top: 4px;">
+                    <Bindings>
+                        <UnityEngine.Localization.LocalizedString property="text" table="GUID:2ceec474979474c7b853c0924ca72fab" entry="Id(1521475585)"/>
+                    </Bindings>
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="login-spacer"/>
+        <ui:VisualElement name="footer" class="login-footer">
+            <ui:Button name="support-button" text="SUPORTE" class="cs-button-primary login-btn">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:2ceec474979474c7b853c0924ca72fab" entry="Id(1521475586)"/>
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

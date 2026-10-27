@@ -1,0 +1,17 @@
+{
+    "name": "Champions.Data",
+    "rootNamespace": "Champions.Data",
+    "references": [
+        "Conkist.GDK",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

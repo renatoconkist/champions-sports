@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: System_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: d07987f1dd58642b4b8354f6759fdee1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 238018560
+    m_Localized: "Correo o contrase\xF1a incorrectos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018561
+    m_Localized: No se pudo crear la cuenta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018562
+    m_Localized: "Las contrase\xF1as no coinciden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018563
+    m_Localized: No se pudo enviar el correo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018564
+    m_Localized: "\xA1Enlace de recuperaci\xF3n enviado!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    StatBadge — componente reutilizável (template UXML).
+    Use com <Instance template="StatBadge" /> em qualquer tela.
+    Controle via StatBadgeElement.cs ou com binding direto.
+-->
+<UXML xmlns="UnityEngine.UIElements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+    <VisualElement class="stat-badge">
+        <Label name="value-label" text="0" class="stat-badge__value" />
+        <Label name="title-label" text="Stat" class="stat-badge__title" />
+    </VisualElement>
+</UXML>

@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Theme/theme.uss?fileID=7433441132597879392&amp;guid=e882c81082ad640d895c30fc242e9a86&amp;type=3#theme"/>
+    <ui:VisualElement name="reels-btn-root" class="reels-btn" style="background-color: rgb(70, 70, 70); width: 100px; height: 150px;">
+        <ui:VisualElement name="reels-thumbnail" class="reels-btn__thumbnail" style="background-color: rgb(91, 91, 91);"/>
+        <ui:Label name="reels-number" text="1" class="reels-btn__number" style="font-size: 50px; padding-left: 2px; margin-left: 4px; align-self: center; align-items: center; height: 36px; bottom: 20px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Antonio/Antonio-Variable.ttf?fileID=12800000&amp;guid=e15befcfc08dc4ab38cbe21399fd3cfa&amp;type=3#Antonio-Variable&quot;); right: 0; left: 0; text-shadow: 0 0 0 rgb(0, 0, 0); -unity-font-style: bold; -unity-text-align: lower-center;"/>
+        <ui:VisualElement name="reels-icon" class="reels-btn__thumbnail" style="background-color: rgba(255, 255, 255, 0); bottom: auto; right: auto; background-image: url(&quot;project://database/Assets/Art/UISprites/VideoItem-Icon.png?fileID=21300000&amp;guid=4540e240895c64afc83f11dbeab4fd2d&amp;type=3#VideoItem-Icon&quot;); top: 19px; left: 8px; width: 33px; height: 30px;"/>
+        <ui:VisualElement name="bottom-label" class="reels-btn__thumbnail" style="background-color: rgb(233, 67, 67); top: auto; height: 16px;">
+            <ui:Label name="reels-number" text="SEMANA" class="reels-btn__number" style="height: auto; bottom: 0; font-size: 10px; top: 0; margin-top: 2px; margin-left: 8px; margin-right: 8px; padding-left: 2px; text-shadow: 0 0 0 rgb(0, 0, 0);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

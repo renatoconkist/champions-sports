@@ -1,0 +1,801 @@
+:root {
+    --font-regular: url("project://database/Assets/Fonts/Inter/Inter-Regular.ttf?fileID=12800000&guid=bab7b550de39e4f67a038266efbb6bb3&type=3#Inter-Regular");
+    --font-medium: url("project://database/Assets/Fonts/Inter/Inter-Medium.ttf?fileID=12800000&guid=036e68951791a4bab90f0d9a9a657e9c&type=3#Inter-Medium");
+    --font-semibold: url("project://database/Assets/Fonts/Inter/Inter-SemiBold.ttf?fileID=12800000&guid=152747c16211447c0b444c9510184048&type=3#Inter-SemiBold");
+    --font-bold: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    --font-display: url("project://database/Assets/Fonts/Antonio/Antonio-Variable.ttf?fileID=12800000&guid=e15befcfc08dc4ab38cbe21399fd3cfa&type=3#Antonio-Variable");
+    --color-primary: rgb(100, 226, 133);
+    --color-primary-dark: rgb(61, 191, 96);
+    --color-primary-text: rgb(13, 64, 32);
+    --color-accent: rgb(236, 185, 89);
+    --color-accent-dark: rgb(200, 150, 61);
+    --color-background: rgb(255, 255, 255);
+    --color-surface: rgb(236, 243, 254);
+    --color-surface-alt: rgb(221, 232, 248);
+    --color-divider: rgb(209, 220, 240);
+    --color-text-primary: rgb(13, 27, 42);
+    --color-text-secondary: rgb(96, 120, 153);
+    --color-text-disabled: rgb(160, 180, 204);
+    --color-text-inverse: rgb(255, 255, 255);
+    --color-text-on-primary: rgb(13, 64, 32);
+    --color-success: rgb(100, 226, 133);
+    --color-error: rgb(224, 75, 75);
+    --color-warning: rgb(236, 185, 89);
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-btn: 16px;
+    --radius-pill: 999px;
+    --font-size-caption: 12px;
+    --font-size-xs: 14px;
+    --font-size-sm: 16px;
+    --font-size-body: 16px;
+    --font-size-md: 18px;
+    --font-size-lg: 22px;
+    --font-size-xl: 26px;
+    --font-size-2xl: 32px;
+}
+
+VisualElement {
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Regular.ttf?fileID=12800000&guid=bab7b550de39e4f67a038266efbb6bb3&type=3#Inter-Regular");
+    text-shadow: 0 0 0 rgb(0, 0, 0);
+}
+
+.cs-screen-root {
+    flex-grow: 1;
+    background-color: var(--color-background);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+}
+
+.cs-button-primary {
+    background-color: var(--color-primary);
+    border-width: 0;
+    border-radius: var(--radius-btn);
+    color: var(--color-text-on-primary);
+    font-size: var(--font-size-md);
+    height: 52px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    -unity-text-align: middle-center;
+    transition-duration: 0.12s;
+}
+
+.cs-button-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.cs-button-primary:active {
+    background-color: var(--color-primary-dark);
+    scale: 0.98;
+}
+
+.cs-button-ghost {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    border-width: 2px;
+    border-radius: var(--radius-btn);
+    color: var(--color-primary-dark);
+    font-size: var(--font-size-md);
+    height: 52px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    -unity-text-align: middle-center;
+}
+
+.cs-button-ghost:hover {
+    background-color: var(--color-surface);
+}
+
+.cs-card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+}
+
+.cs-input > .unity-base-field__label {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+}
+
+.cs-input .unity-text-field__input {
+    background-color: var(--color-surface);
+    border-color: var(--color-divider);
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    color: var(--color-text-primary);
+    height: 48px;
+    padding-left: var(--space-md);
+}
+
+.cs-input .unity-text-field__input:focus {
+    border-color: var(--color-primary);
+}
+
+.cs-label-error {
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+    -unity-text-align: middle-center;
+}
+
+.cs-progress-bar > .unity-progress-bar__background {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-pill);
+    border-width: 0;
+}
+
+.cs-progress-bar > .unity-progress-bar__progress {
+    background-color: var(--color-accent);
+    border-radius: var(--radius-pill);
+}
+
+.tab--active {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-pill);
+    color: var(--color-text-on-primary);
+}
+
+.font-display {
+    -unity-font-definition: url("project://database/Assets/Fonts/Antonio/Antonio-Variable.ttf?fileID=12800000&guid=e15befcfc08dc4ab38cbe21399fd3cfa&type=3#Antonio-Variable");
+}
+
+.cat-chip {
+    background-color: var(--color-surface);
+    border-width: 0;
+    border-radius: var(--radius-pill);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    height: 32px;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+}
+
+.cat-chip--active {
+    background-color: var(--color-primary);
+    color: var(--color-text-on-primary);
+    -unity-font-style: bold;
+}
+
+.position-btn {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-md);
+    color: rgb(255, 255, 255);
+    font-size: var(--font-size-sm);
+    -unity-font-style: bold;
+    height: 40px;
+    min-width: 60px;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+}
+
+.position-btn--selected {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    color: rgb(61, 191, 96);
+}
+
+.login-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("project://database/Assets/Art/UISprites/login-background.png?fileID=2800000&guid=f9b3bb0b7d85c409fa0cd364a344a3c8&type=3#login-background");
+    background-size: cover;
+    background-position: center center;
+}
+
+.login-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-top-bar {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-top: 52px;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+.login-spacer {
+    flex-grow: 1;
+}
+
+.cs-panel-login {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 28px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    align-items: stretch;
+    overflow: visible;
+}
+
+.login-logo {
+    align-self: center;
+    width: 200px;
+    background-image: url("project://database/Assets/Art/UISprites/logo.png?fileID=2800000&guid=22b58393a4495486bb0d1d7da0251ea7&type=3#logo");
+    background-size: contain;
+    background-position: center center;
+    height: 200px;
+    margin-bottom: 14px;
+}
+
+.login-form {
+    align-items: stretch;
+}
+
+.cs-input-login {
+    margin-bottom: 10px;
+}
+
+.cs-input-login > .unity-base-field__label {
+    display: none;
+}
+
+.cs-input-login > .unity-text-field__input,
+.cs-input-login .unity-text-field__input {
+    background-color: rgb(235, 235, 235);
+    border-width: 0;
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    height: 56px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: var(--font-size-body);
+    flex-grow: 1;
+    margin: 0;
+}
+
+.cs-input-login > .unity-text-field__input:focus,
+.cs-input-login .unity-text-field__input:focus {
+    border-color: var(--color-primary);
+    border-width: 2px;
+    background-color: rgb(245, 245, 245);
+}
+
+.cs-input-login .unity-base-text-field__input--placeholder {
+    color: var(--color-text-disabled);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Regular.ttf?fileID=12800000&guid=bab7b550de39e4f67a038266efbb6bb3&type=3#Inter-Regular");
+}
+
+.login-btn {
+    height: 56px;
+    font-size: var(--font-size-md);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    letter-spacing: 1px;
+}
+
+.cs-button-language {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-pill);
+    background-color: transparent;
+    border-width: 0;
+    padding: 0;
+    background-size: 100% 100%;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+
+.cs-button-language--pt {
+    background-image: url("project://database/Assets/Art/Flags/flag_br.png?fileID=2800000&guid=43ab97f9bbe4446f6b5968dc6cecb8d1&type=3#flag_br");
+}
+
+.cs-button-language--en {
+    background-image: url("project://database/Assets/Art/Flags/flag_us.png?fileID=2800000&guid=9e23073c6c6084c0988567b151798073&type=3#flag_us");
+}
+
+.cs-button-language--es {
+    background-image: url("project://database/Assets/Art/Flags/flag_es.png?fileID=2800000&guid=ba0de7c4f37dd4d1388ec00ba614b9ca&type=3#flag_es");
+}
+
+/* ── Language picker dropdown ───────────────────────────────────────── */
+.language-picker {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 8px;
+    row-gap: 6px;
+    border-width: 1px;
+    border-color: var(--color-divider);
+}
+
+.language-picker__flag {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-pill);
+    border-width: 0;
+    padding: 0;
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+
+.language-picker__flag--active {
+    border-width: 2px;
+    border-color: var(--color-primary);
+}
+
+.cs-link-text {
+    background-color: transparent;
+    border-width: 0;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-body);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    -unity-text-align: middle-center;
+    height: 40px;
+    padding: 0;
+    margin-top: 4px;
+}
+
+.cs-link-text:hover {
+    color: var(--color-primary-dark);
+}
+
+.login-footer {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+}
+
+.auth-top-bar {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 52px;
+    margin-bottom: 0;
+}
+
+.cs-button-back {
+    position: absolute;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-surface);
+    border-width: 1.5px;
+    border-color: var(--color-divider);
+    padding: 0;
+    color: var(--color-text-primary);
+    font-size: 18px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    -unity-text-align: middle-center;
+    height: 32px;
+    width: 32px;
+    top: 32px;
+    right: 32px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.cs-button-back:hover {
+    background-color: var(--color-surface-alt);
+}
+
+.cs-button-back:active {
+    background-color: var(--color-divider);
+    scale: 0.95;
+}
+
+.auth-scroll-panel {
+    margin-left: 24px;
+    margin-right: 24px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.auth-scroll-panel > #unity-content-and-vertical-scroll-container > #unity-content-viewport > #unity-content-container {
+    align-items: stretch;
+}
+
+.auth-panel-title {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    -unity-text-align: middle-center;
+    margin-bottom: 24px;
+}
+
+.auth-panel-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.auth-success-label {
+    color: var(--color-success);
+    font-size: var(--font-size-sm);
+    -unity-text-align: middle-center;
+}
+
+.auth-icon-small {
+    align-self: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    background-size: contain;
+    background-position: center center;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-pill);
+}
+
+.cs-input-multiline > .unity-text-field__input,
+.cs-input-multiline .unity-text-field__input {
+    min-height: 120px;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.cs-screen-title {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+}
+
+.cs-section-title {
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    margin-bottom: var(--space-sm);
+}
+
+.cs-label-secondary {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.cs-label-caption {
+    font-size: var(--font-size-caption);
+    color: var(--color-text-secondary);
+}
+
+.cs-avatar {
+    border-radius: var(--radius-pill);
+    background-color: var(--color-surface);
+    border-color: var(--color-primary);
+    border-width: 2px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cs-card-dark {
+    background-color: var(--color-text-primary);
+    border-radius: var(--radius-btn);
+    padding: var(--space-md);
+    flex-direction: row;
+    align-items: center;
+}
+
+.cs-button-danger {
+    background-color: transparent;
+    border-color: var(--color-error);
+    border-width: 2px;
+    border-radius: var(--radius-btn);
+    color: var(--color-error);
+    height: 52px;
+    font-size: var(--font-size-md);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    -unity-text-align: middle-center;
+}
+
+.tab-btn {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-width: 0;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    row-gap: 4px;
+}
+
+.tab-icon {
+    font-size: 24px;
+    -unity-text-align: middle-center;
+    color: var(--color-text-secondary);
+}
+
+.tab-btn--active .tab-icon {
+    color: var(--color-primary-dark);
+}
+
+.tab-indicator {
+    width: 4px;
+    height: 4px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.tab-btn--active .tab-indicator {
+    background-color: var(--color-primary);
+}
+
+.tab-label {
+    font-size: var(--font-size-caption);
+    color: var(--color-text-secondary);
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+}
+
+.tab-label--active {
+    color: var(--color-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+}
+
+.cs-content-list-scroll {
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.cs-content-list-row {
+    flex-direction: row;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    column-gap: 10px;
+    align-items: flex-start;
+}
+
+.cs-content-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 6px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: var(--color-surface);
+    border-width: 1.5px;
+    border-color: var(--color-divider);
+    padding-top: 12px;
+    padding-bottom: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    min-height: auto;
+    width: 80px;
+}
+
+.cs-content-item--active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary-dark);
+}
+
+.cs-content-item-icon {
+    font-size: 22px;
+    -unity-text-align: middle-center;
+}
+
+.cs-content-item-label {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    -unity-text-align: middle-center;
+    white-space: normal;
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-SemiBold.ttf?fileID=12800000&guid=152747c16211447c0b444c9510184048&type=3#Inter-SemiBold");
+}
+
+.cs-content-item--active .cs-content-item-label {
+    color: var(--color-text-on-primary);
+}
+
+.cs-scope-row {
+    flex-direction: row;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-pill);
+    padding: 4px;
+    margin-bottom: var(--space-md);
+}
+
+.cs-scope-btn {
+    flex-grow: 1;
+    height: 36px;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: var(--radius-pill);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    -unity-text-align: middle-center;
+}
+
+.cs-scope-btn--active {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+}
+
+.cs-chip-coin {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-pill);
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    flex-direction: row;
+    align-items: center;
+}
+
+.cs-chip-coin__label {
+    color: var(--color-accent-dark);
+    font-size: var(--font-size-sm);
+    -unity-font-style: bold;
+}
+
+.cs-popup-root {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.cs-popup-card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 28px;
+    align-items: stretch;
+    overflow: hidden;
+    width: 100%;
+}
+
+.cs-popup-accent {
+    height: 12px;
+    background-color: var(--color-primary);
+    margin-bottom: 24px;
+}
+
+.cs-popup-title {
+    color: var(--color-text-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Antonio/Antonio-Variable.ttf?fileID=12800000&guid=e15befcfc08dc4ab38cbe21399fd3cfa&type=3#Antonio-Variable");
+    -unity-text-align: middle-center;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    -unity-font-style: bold;
+    font-size: 42px;
+}
+
+.cs-popup-body {
+    color: var(--color-text-primary);
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Regular.ttf?fileID=12800000&guid=bab7b550de39e4f67a038266efbb6bb3&type=3#Inter-Regular");
+    -unity-text-align: middle-center;
+    white-space: normal;
+    margin-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 24px;
+}
+
+.cs-popup-actions {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 20px;
+    align-items: stretch;
+}
+
+.progress-bar {
+    background-color: rgb(26, 26, 26);
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress-bar__fill {
+    background-color: rgb(83, 219, 65);
+    height: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    width: 0%;
+}
+
+.reddot {
+    flex-grow: 0;
+    background-color: rgb(255, 0, 0);
+    right: 0;
+    bottom: 0;
+    align-content: flex-end;
+    width: 12px;
+    height: 12px;
+    border-top-left-radius: 999px;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    border-bottom-left-radius: 999px;
+    justify-content: flex-end;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    padding-left: 0;
+    margin-right: -2px;
+    margin-bottom: -2px;
+    display: none;
+}
+
+.reels-list-scroll {
+    flex-shrink: 0;
+}
+
+.reels-list-row {
+    flex-direction: row;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    column-gap: 10px;
+    align-items: flex-start;
+}
+
+.reels-btn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80px;
+    height: 120px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+    background-color: var(--color-surface);
+}
+
+.reels-btn--active {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-color: var(--color-primary);
+    border-right-color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    border-left-color: var(--color-primary);
+}
+
+.reels-btn__thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-surface-alt);
+}
+
+.reels-btn__number {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&guid=32afd0b82579649bf8d5917abfaff7a9&type=3#Inter-Bold");
+    text-shadow: 0 1px 3px rgb(0, 0, 0);
+}

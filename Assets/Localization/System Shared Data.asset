@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: System Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: System
+  m_TableCollectionNameGuidString: d07987f1dd58642b4b8354f6759fdee1
+  m_Entries:
+  - m_Id: 238018560
+    m_Key: error_wrong_credentials
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018561
+    m_Key: error_register_failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018562
+    m_Key: error_password_mismatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018563
+    m_Key: error_send_failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238018564
+    m_Key: success_recovery_sent
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5254508358013289122
+  references:
+    version: 2
+    RefIds:
+    - rid: 5254508358013289122
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1792944130717

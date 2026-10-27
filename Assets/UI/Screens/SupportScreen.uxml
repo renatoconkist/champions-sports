@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Theme/theme.uss?fileID=7433441132597879392&amp;guid=e882c81082ad640d895c30fc242e9a86&amp;type=3#theme"/>
+    <ui:VisualElement name="support-root" class="cs-screen-root login-root" style="flex-direction: column; padding: 0; background-color: rgb(28, 59, 37);">
+        <ui:VisualElement name="bg-image" class="login-bg"/>
+        <ui:VisualElement name="bg-overlay" class="login-bg-overlay"/>
+        <ui:VisualElement class="login-spacer"/>
+        <ui:VisualElement name="support-panel" class="cs-panel-login" style="margin-left: 24px; margin-right: 24px; align-items: center;">
+            <ui:Button name="back-button" text="" tooltip="Voltar" class="cs-button-back" style="background-color: rgba(255, 255, 255, 0); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; background-image: url(&quot;project://database/Assets/Art/UISprites/X.png?fileID=2800000&amp;guid=1a4991c61bcbf473e921a92595543c0f&amp;type=3#X&quot;);"/>
+            <ui:VisualElement name="icon-image" class="auth-icon-small" style="background-image: url(&quot;project://database/Assets/Art/UISprites/logo.png?fileID=2800000&amp;guid=22b58393a4495486bb0d1d7da0251ea7&amp;type=3#logo&quot;); background-color: rgba(255, 255, 255, 0); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; width: 200px; height: 200px;"/>
+            <ui:Label name="title" text="Suporte" class="auth-panel-title" style="margin-bottom: 20px;">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:2ceec474979474c7b853c0924ca72fab" entry="Id(1521475586)"/>
+                </Bindings>
+            </ui:Label>
+            <ui:Label name="call-label" text="Fale conosco!" class="cs-section-title" style="-unity-text-align: middle-center; margin-bottom: 12px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/Inter/Inter-Medium.ttf?fileID=12800000&amp;guid=036e68951791a4bab90f0d9a9a657e9c&amp;type=3#Inter-Medium&quot;); font-size: 24px;">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:2ceec474979474c7b853c0924ca72fab" entry="Id(25640932728832)"/>
+                </Bindings>
+            </ui:Label>
+            <ui:Label name="phone-label" text="+55 (41) 99920-7074" style="font-size: 22px; color: rgb(13, 27, 42); -unity-font-definition: url(&quot;project://database/Assets/Fonts/Inter/Inter-Medium.ttf?fileID=12800000&amp;guid=036e68951791a4bab90f0d9a9a657e9c&amp;type=3#Inter-Medium&quot;); -unity-text-align: middle-center; margin-bottom: 32px; -unity-font-style: normal;"/>
+            <ui:Button name="whatsapp-button" text="WHATSAPP" class="cs-button-primary login-btn" style="width: 100%; -unity-font-style: bold;"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="login-spacer"/>
+    </ui:VisualElement>
+</ui:UXML>

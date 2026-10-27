@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="ContentList" src="project://database/Assets/UI/Components/ContentList.uxml?fileID=9197481963319205126&amp;guid=bb4a58e6cf6644de09336f22dd5e4237&amp;type=3#ContentList"/>
+    <ui:Template name="HeaderComponent" src="project://database/Assets/UI/Components/HeaderComponent.uxml?fileID=9197481963319205126&amp;guid=c19b9c137d9d64f859d93c48d1255f4c&amp;type=3#HeaderComponent"/>
+    <ui:Template name="ReelsButton" src="project://database/Assets/UI/Components/ReelsButton.uxml?fileID=9197481963319205126&amp;guid=4660c80b7d5eb4aeaad17dd0d5474266&amp;type=3#ReelsButton"/>
+    <ui:Template name="TabBar" src="project://database/Assets/UI/Components/TabBar.uxml?fileID=9197481963319205126&amp;guid=8fbbad528a7ea4a25880ad71fbcf6421&amp;type=3#TabBar"/>
+    <Style src="project://database/Assets/UI/Theme/theme.uss?fileID=7433441132597879392&amp;guid=e882c81082ad640d895c30fc242e9a86&amp;type=3#theme"/>
+    <ui:ScrollView name="content-scroll" horizontal-scroller-visibility="Hidden" style="flex-grow: 1; padding-bottom: 88px; background-color: rgb(236, 243, 254); margin-top: 0; padding-left: 16px; padding-right: 16px; padding-top: 120px;">
+        <ui:ScrollView name="reels-list-scroll" scroll-direction="Horizontal" horizontal-scrollbar-visibility="Hidden" vertical-scrollbar-visibility="Hidden" touch-scroll-type="Elastic" mode="Horizontal" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" style="flex-shrink: 0; margin-left: 0; margin-right: 0; margin-bottom: 12px; padding-left: 8px; padding-right: 8px;">
+            <ui:VisualElement name="reels-list-row" class="reels-list-row" style="padding-left: 0; padding-right: 0; padding-bottom: 0; padding-top: 0; margin-right: 0;">
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+                <ui:Instance template="ReelsButton" name="reels-button" style="margin-right: 4px;"/>
+            </ui:VisualElement>
+        </ui:ScrollView>
+        <ui:Instance template="ContentList" name="content-list" style="margin-left: 0; margin-right: 0; margin-bottom: 12px; flex-shrink: 0;"/>
+        <ui:VisualElement name="progress-card" class="cs-card" style="margin-bottom: 16px;">
+            <ui:Label name="progress-title" text="Treinos esta semana" class="cs-label-secondary" style="margin-bottom: 8px;"/>
+            <ui:ProgressBar name="weekly-bar" binding-path="WeeklyProgress" class="cs-progress-bar" style="height: 10px; border-top-left-radius: 999px; border-top-right-radius: 999px; border-bottom-left-radius: 999px; border-bottom-right-radius: 999px; margin-bottom: 6px;"/>
+            <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                <ui:Label name="progress-count" class="cs-label-secondary" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Inter/Inter-Bold.ttf?fileID=12800000&amp;guid=32afd0b82579649bf8d5917abfaff7a9&amp;type=3#Inter-Bold&quot;); color: rgb(13, 27, 42);"/>
+                <ui:Label name="progress-goal" class="cs-label-secondary"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:ScrollView>
+    <ui:Instance template="HeaderComponent" name="header" style="margin-bottom: 0; flex-shrink: 0; text-shadow: 0 0 0 rgb(0, 0, 0); position: absolute; width: 100%;"/>
+    <ui:Instance template="TabBar" name="tabbar" style="flex-shrink: 0; margin-bottom: 16px; align-self: center; position: absolute; bottom: 0;"/>
+</ui:UXML>

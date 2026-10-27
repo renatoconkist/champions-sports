@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="../Theme/theme.uss" />
+    <!--
+        Onboarding — Passo 1: Dados do perfil
+        data-source: ProfileViewModel
+        Controller:  ProfileController.cs (onboarding mode)
+        Locale keys: ONBOARDING_PROFILE_*
+    -->
+    <ui:VisualElement name="onboarding-root" class="cs-screen-root"
+                      style="background-color: rgb(236, 243, 254); padding-top: 16px;">
+
+        <!-- Progress dots -->
+        <ui:VisualElement name="progress-dots"
+                          style="flex-direction: row; justify-content: center;
+                                 margin-bottom: 24px; margin-top: 16px;">
+            <ui:VisualElement style="width: 8px; height: 8px;
+                                     border-radius: 999px;
+                                     background-color: rgb(100, 226, 133);
+                                     margin-right: 6px;" />
+            <ui:VisualElement style="width: 8px; height: 8px;
+                                     border-radius: 999px;
+                                     background-color: rgb(209, 220, 240);" />
+        </ui:VisualElement>
+
+        <ui:Label name="title-label" text="Crie seu perfil"
+                  class="cs-screen-title"
+                  style="margin-bottom: 6px;" />
+        <ui:Label name="subtitle-label" text="Como você quer ser chamado?"
+                  class="cs-label-secondary"
+                  style="margin-bottom: 28px;" />
+
+        <!-- Avatar picker -->
+        <ui:VisualElement name="avatar-picker"
+                          style="align-items: center; margin-bottom: 28px;">
+            <ui:VisualElement name="avatar-image" class="cs-avatar"
+                              style="width: 96px; height: 96px;
+                                     border-color: rgb(100, 226, 133);
+                                     border-width: 3px;" />
+            <ui:Button name="change-avatar-button" text="Escolher foto"
+                       style="margin-top: 8px;
+                              background-color: transparent;
+                              color: rgb(100, 226, 133);
+                              border-width: 0;
+                              -unity-font-definition: url('../../Fonts/Inter/Inter-Bold.ttf');" />
+        </ui:VisualElement>
+
+        <ui:TextField name="first-name-field"
+                      label="Nome"
+                      placeholder="Nome"
+                      class="cs-input-login"
+                      style="margin-bottom: 12px;" />
+        <ui:TextField name="last-name-field"
+                      label="Sobrenome"
+                      placeholder="Sobrenome"
+                      class="cs-input-login"
+                      style="margin-bottom: 24px;" />
+
+        <ui:Button name="next-button" text="Próximo →"
+                   class="cs-button-primary" />
+
+    </ui:VisualElement>
+</ui:UXML>

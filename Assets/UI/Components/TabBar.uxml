@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Theme/theme.uss?fileID=7433441132597879392&amp;guid=e882c81082ad640d895c30fc242e9a86&amp;type=3#theme"/>
+    <ui:VisualElement name="tabbar-root" style="flex-direction: row; align-items: stretch; background-color: rgb(173, 191, 219); border-top-width: 0; border-top-color: rgb(209, 220, 240); padding-bottom: 4px; -unity-text-align: lower-left; border-top-left-radius: 32px; border-top-right-radius: 32px; border-bottom-right-radius: 32px; border-bottom-left-radius: 32px; text-shadow: 0 2px 2px rgb(0, 0, 0); justify-content: center; align-self: center; align-content: auto; flex-wrap: wrap; flex-shrink: 1; width: auto; text-overflow: clip; padding-left: 8px; padding-right: 8px; -unity-text-outline-width: 0;">
+        <ui:Button name="tab-home" tooltip="Início" class="tab-btn" style="flex-shrink: 1; flex-grow: 0; padding-left: 4px; padding-right: 4px; margin-left: 8px; margin-right: 8px;">
+            <ui:VisualElement name="icon-home" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/UISprites/Icons.png?fileID=-1364974623&amp;guid=b046702c83e084ad8ac1dd7618216f0f&amp;type=3#Icons_10&quot;); width: 64px; height: 64px;"/>
+        </ui:Button>
+        <ui:Button name="tab-goals" tooltip="Objetivos" class="tab-btn" style="flex-shrink: 1; flex-grow: 0; padding-left: 4px; padding-right: 4px; margin-left: 8px; margin-right: 8px;">
+            <ui:VisualElement name="icon-goal" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/UISprites/Icons.png?fileID=1957319216&amp;guid=b046702c83e084ad8ac1dd7618216f0f&amp;type=3#Icons_2&quot;); width: 64px; height: 64px;"/>
+        </ui:Button>
+        <ui:Button name="tab-action" tooltip="Ações" class="tab-btn" style="flex-grow: 0; flex-shrink: 1; padding-left: 4px; padding-right: 4px; margin-left: 8px; margin-right: 8px;">
+            <ui:VisualElement name="icon-action" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/UISprites/Icon-action.png?fileID=2800000&amp;guid=ccf2509e943c84f0ab60e97cc115110a&amp;type=3#Icon-action&quot;); width: 64px; height: 64px;"/>
+        </ui:Button>
+        <ui:Button name="tab-reels" tooltip="Reels" class="tab-btn" style="flex-shrink: 1; flex-grow: 0; padding-right: 4px; padding-left: 4px; margin-left: 8px; margin-right: 8px;">
+            <ui:VisualElement name="icon-reels" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/UISprites/Icons.png?fileID=1658801578&amp;guid=b046702c83e084ad8ac1dd7618216f0f&amp;type=3#Icons_12&quot;); width: 64px; height: 64px;"/>
+        </ui:Button>
+        <ui:Button name="tab-chatbot" tooltip="Chatbot" class="tab-btn" style="flex-shrink: 1; flex-grow: 0; padding-left: 4px; padding-right: 4px; margin-left: 8px; margin-right: 8px;">
+            <ui:VisualElement name="icon-chatbot" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/UISprites/Icons.png?fileID=-612115455&amp;guid=b046702c83e084ad8ac1dd7618216f0f&amp;type=3#Icons_11&quot;); width: 64px; height: 64px;"/>
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

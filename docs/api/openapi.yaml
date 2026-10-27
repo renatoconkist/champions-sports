@@ -1,0 +1,464 @@
+openapi: "3.0.3"
+info:
+  title: Champions Sports API
+  version: "1.0.0"
+  description: |
+    Draft OpenAPI spec for the Champions Sports backend.
+    Derived from docs/api/ENDPOINTS.md.
+    Gaps (endpoints not in the old API) are marked with `x-gap: true`.
+    Base URL is a placeholder — update EndpointConfig.asset before testing.
+
+servers:
+  - url: https://PLACEHOLDER.example.com/api/v1
+    description: Production (placeholder — set real URL)
+  - url: https://staging.example.com/api/v1
+    description: Staging (placeholder)
+
+security:
+  - BearerAuth: []
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    AuthResponse:
+      type: object
+      properties:
+        access_token:  { type: string }
+        refresh_token: { type: string }
+        token_type:    { type: string, example: Bearer }
+        expires_in:    { type: integer, example: 3600 }
+
+    BackendProfile:
+      type: object
+      properties:
+        id:          { type: integer }
+        given_name:  { type: string }
+        last_name:   { type: string }
+        age:         { type: integer }
+        avatar_url:  { type: string }
+        level:       { type: integer }
+        xp:          { type: integer }
+        coins:       { type: integer }
+        positions:
+          type: array
+          items: { type: string }
+
+    ContentCard:
+      type: object
+      properties:
+        id:           { type: integer }
+        title:        { type: string }
+        subtitle:     { type: string }
+        image_url:    { type: string }
+        category:     { type: string, enum: [know, train, mission, rank] }
+        style:        { type: string, enum: [green, blue, gold, red] }
+        footer_label: { type: string }
+
+    Reel:
+      type: object
+      properties:
+        id:            { type: integer }
+        title:         { type: string }
+        path:          { type: string }
+        thumbnail_url: { type: string }
+
+    Training:
+      type: object
+      properties:
+        id:          { type: integer }
+        title:       { type: string }
+        description: { type: string }
+        level:       { type: string, enum: [iniciante, intermediário, avançado] }
+        category:    { type: string }
+
+    WeeklyProgress:
+      type: object
+      properties:
+        week:  { type: integer }
+        score: { type: number, format: float }
+        evaluations:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluationItem'
+
+    EvaluationItem:
+      type: object
+      properties:
+        skill: { type: string }
+        value: { type: number, format: float }
+
+    Error:
+      type: object
+      properties:
+        message: { type: string }
+        code:    { type: integer }
+
+paths:
+  # ── Authentication ──────────────────────────────────────────
+  /login:
+    post:
+      summary: Login with email/password
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                login:    { type: string }
+                password: { type: string }
+      responses:
+        "200":
+          description: JWT token pair
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+        "401": { description: Invalid credentials }
+
+  /signup:
+    post:
+      summary: Register new account
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:    { type: string, format: email }
+                password: { type: string }
+                username: { type: string }
+                phone:    { type: string }
+      responses:
+        "201":
+          description: Account created, returns token pair
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+
+  /forgot-password:
+    post:
+      summary: Request password reset email
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email: { type: string, format: email }
+      responses:
+        "200": { description: Email sent }
+
+  /logout:
+    post:
+      summary: Invalidate current session
+      responses:
+        "200": { description: Logged out }
+
+  /auth/refresh:
+    post:
+      summary: Refresh access token with refresh token
+      x-gap: true
+      description: "GAP — not in old API. Required for silent session renewal."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuthResponse' }
+
+  # ── Profile ─────────────────────────────────────────────────
+  /profile:
+    get:
+      summary: Get current user profile
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BackendProfile' }
+
+  /update-profile:
+    post:
+      summary: Update profile fields
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                given_name: { type: string }
+                last_name:  { type: string }
+                age:        { type: integer }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BackendProfile' }
+
+  /update-account:
+    patch:
+      summary: Update account credentials
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:                    { type: string, format: email }
+                phone:                    { type: string }
+                password:                 { type: string }
+                new_password:             { type: string }
+                new_password_confirmation: { type: string }
+      responses:
+        "200": { description: Account updated }
+
+  /profile/positions:
+    post:
+      summary: Save player positions (max 3)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                positions:
+                  type: array
+                  items: { type: string }
+                  maxItems: 3
+      responses:
+        "200": { description: Positions saved }
+
+  /upload-photo:
+    post:
+      summary: Upload avatar photo
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  avatar_url: { type: string }
+
+  # ── Content ──────────────────────────────────────────────────
+  /content:
+    get:
+      summary: Get home content bundle (featured cards, news, events, challenges)
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  featured:   { type: array, items: { $ref: '#/components/schemas/ContentCard' } }
+                  news:       { type: array, items: { $ref: '#/components/schemas/ContentCard' } }
+                  events:     { type: array, items: { $ref: '#/components/schemas/ContentCard' } }
+                  challenges: { type: array, items: { $ref: '#/components/schemas/ContentCard' } }
+
+  /videos:
+    get:
+      summary: Get video reels for Conhecimento tab
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Reel' }
+
+  /trainings:
+    get:
+      summary: List training challenges
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Training' }
+
+  /start-training:
+    post:
+      summary: Mark training as started
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                training_challenge_id: { type: integer }
+      responses:
+        "200": { description: Training started }
+
+  /finish-training:
+    post:
+      summary: Mark training as finished and award XP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                training_challenge_id: { type: integer }
+      responses:
+        "200": { description: Training finished }
+
+  /reports:
+    get:
+      summary: Get weekly evaluation report
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WeeklyProgress' }
+
+  /new-report:
+    post:
+      summary: Request a re-evaluation
+      responses:
+        "200": { description: Re-evaluation requested }
+
+  # ── GAP endpoints (not in old API) ──────────────────────────
+  /missions:
+    get:
+      summary: List active missions
+      x-gap: true
+      description: "GAP: Priority HIGH. Required for Missions screen."
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:          { type: integer }
+                    title:       { type: string }
+                    description: { type: string }
+                    completed:   { type: boolean }
+
+  /missions/{id}/complete:
+    post:
+      summary: Complete a mission
+      x-gap: true
+      description: "GAP: Priority HIGH."
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200": { description: Mission completed }
+
+  /ranking:
+    get:
+      summary: Get global ranking
+      x-gap: true
+      description: "GAP: Priority HIGH. Required for Ranking tab."
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    position:   { type: integer }
+                    account_id: { type: integer }
+                    username:   { type: string }
+                    avatar_url: { type: string }
+                    score:      { type: integer }
+                    league:     { type: string }
+
+  /league:
+    get:
+      summary: Get league / division info
+      x-gap: true
+      description: "GAP: Priority MEDIUM."
+      responses:
+        "200": { description: League data }
+
+  /wallet:
+    get:
+      summary: Real-time coin/XP balance
+      x-gap: true
+      description: "GAP: Priority LOW — old API returns balance inside /profile."
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  coins: { type: integer }
+                  xp:    { type: integer }
+                  level: { type: integer }
+
+  /support:
+    post:
+      summary: Send a support message
+      x-gap: true
+      description: "GAP: Priority HIGH. Required for Suporte screen."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subject: { type: string }
+                message: { type: string }
+      responses:
+        "200": { description: Message received }
+
+  /notifications:
+    get:
+      summary: Get push notification settings
+      x-gap: true
+      description: "GAP: Priority LOW."
+      responses:
+        "200": { description: Notification settings }
+    put:
+      summary: Update push notification settings
+      x-gap: true
+      responses:
+        "200": { description: Settings updated }
+
+  /skills:
+    get:
+      summary: Get player skill tree
+      x-gap: true
+      description: "GAP: Priority MEDIUM. Required for Skill Tree feature."
+      responses:
+        "200": { description: Skill tree data }
+
+  /rewards:
+    get:
+      summary: List claimable rewards
+      x-gap: true
+      description: "GAP: Priority MEDIUM."
+      responses:
+        "200": { description: Rewards list }

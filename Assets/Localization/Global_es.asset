@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Global_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 8837daf99efd1458eba2a86583af9536, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 263184384
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 263184385
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 263184386
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 263184387
+    m_Localized: "Cargando\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13564696846336
+    m_Localized: "Correo electr\xF3nico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13801465307136
+    m_Localized: "Contrase\xF1a"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

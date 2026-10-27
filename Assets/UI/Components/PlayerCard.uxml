@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    PlayerCard — cartão de jogador reutilizável.
+    Use com <Instance template="PlayerCard" /> em listas de ranking, perfil etc.
+    Exemplo de uso:
+        <Template name="PlayerCard" src="PlayerCard.uxml"/>
+        <Instance template="PlayerCard" name="player-card-1"/>
+-->
+<UXML xmlns="UnityEngine.UIElements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+    <VisualElement class="player-card">
+        <!-- Avatar -->
+        <VisualElement name="avatar-image" class="player-card__avatar" />
+
+        <!-- Info Column -->
+        <VisualElement class="player-card__info">
+            <Label name="name-label"     text="Nome do Jogador" class="player-card__name" />
+            <Label name="position-label" text="Posição"         class="player-card__position" />
+        </VisualElement>
+
+        <!-- Stats Row (reutiliza StatBadge) -->
+        <VisualElement class="player-card__stats">
+            <Template name="StatBadge" src="StatBadge.uxml" />
+            <Instance template="StatBadge" name="level-badge" />
+            <Instance template="StatBadge" name="xp-badge" />
+        </VisualElement>
+    </VisualElement>
+</UXML>

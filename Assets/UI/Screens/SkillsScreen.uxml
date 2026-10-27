@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="../Theme/theme.uss" />
+    <!--
+        Conhecimento (Knowledge / Skills tab)
+        Placeholder: will show ContentCards (theory, tactics, rules).
+        Controller: ConhecimentoController.cs
+        Locale keys: KNOWLEDGE_*
+    -->
+    <ui:VisualElement name="conhecimento-root" class="cs-screen-root"
+                      style="padding-top: 16px; flex-grow: 1;">
+
+        <!-- Header -->
+        <ui:Label text="📚 Conhecimento"
+                  class="cs-section-title"
+                  style="margin-bottom: 20px;" />
+
+        <!-- Category chips -->
+        <ui:VisualElement name="categories-row"
+                          style="flex-direction: row; flex-wrap: wrap; margin-bottom: 20px;">
+            <ui:Button name="cat-all" text="Todos"
+                       class="cs-scope-btn cs-scope-btn--active"
+                       style="margin-right: 8px; margin-bottom: 8px;" />
+            <ui:Button name="cat-regras" text="Regras"
+                       class="cs-scope-btn"
+                       style="margin-right: 8px; margin-bottom: 8px;" />
+            <ui:Button name="cat-tatica" text="Tática"
+                       class="cs-scope-btn"
+                       style="margin-right: 8px; margin-bottom: 8px;" />
+            <ui:Button name="cat-historia" text="História"
+                       class="cs-scope-btn"
+                       style="margin-right: 8px; margin-bottom: 8px;" />
+        </ui:VisualElement>
+
+        <!-- Daily challenge card -->
+        <ui:VisualElement name="challenge-card" class="cs-card-dark"
+                          style="flex-direction: row; align-items: center; margin-bottom: 20px;">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Label text="Desafio do dia"
+                          style="font-size: 12px;
+                                 color: rgb(100, 226, 133);
+                                 -unity-font-definition: url('../../Fonts/Inter/Inter-Bold.ttf');
+                                 margin-bottom: 4px;" />
+                <ui:Label name="challenge-title" text="Carregando…"
+                          style="font-size: 16px;
+                                 color: rgb(255, 255, 255);
+                                 -unity-font-definition: url('../../Fonts/Inter/Inter-Bold.ttf');" />
+            </ui:VisualElement>
+            <ui:Button name="challenge-btn" text="▶"
+                       style="background-color: rgb(100, 226, 133);
+                              border-width: 0;
+                              border-radius: 999px;
+                              color: rgb(255, 255, 255);
+                              width: 40px; height: 40px;
+                              font-size: 16px;" />
+        </ui:VisualElement>
+
+        <!-- Content scroll -->
+        <ui:ScrollView name="content-scroll" style="flex-grow: 1;">
+            <!-- ContentCard items injected at runtime -->
+        </ui:ScrollView>
+
+    </ui:VisualElement>
+</ui:UXML>
